@@ -88,7 +88,7 @@ void jouertour(int joueurs, int tour)
    }
    if (lancer1 == 0)
    {
-       printf("Rate ! Tu devrais peut etre demander aux developpeurs d'ajouter une fonction barrieres :p");
+       printf("Rate ! Faudrait qu'on rajoute une fonction barrieres :p\n");
    }
 
    printf("BOOM ! Tu as abattu %d quilles\n", lancer1); // Si le joueur fait un lancer1 normal
@@ -153,6 +153,9 @@ void afficherscore()
 // FONCTION AFFICHERSCORE
 // -> Permet d'afficher les scores pour chaque joueurs a la fin d'une partie.
 {
+    printf("\nEt c'est termine !");
+    printf("\n\n******* TABLEAU DES SCORES *******\n\n");
+
     for (int i = 0; i < nombrejoueur; i++) // Pour tous le joueurs
     {
         printf("%s : ", joueur[i].nom);
@@ -168,7 +171,7 @@ void afficherscore()
                 printf("%d %d |", score1, score2);
             }
         }
-        printf("Total : %d\n", joueur[i].total_score);
+        printf("    Total : %d\n", joueur[i].total_score);
     }
 }
 
@@ -246,7 +249,7 @@ int main(int argc, char** argv)
                 calculscore(); // Calcule des scores de la partie
                 afficherscore(); // Affichage des scores de la partie
 
-                printf("Pressez 'y' pour rejouer, une autre touche pour sortir.\n\n"); // REJOUER ?
+                printf("\nPressez 'y' pour rejouer, une autre touche pour sortir.\n\n"); // REJOUER ?
                 rejouer = _getch();
 
             } while (rejouer == 'y');
